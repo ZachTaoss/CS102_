@@ -13,3 +13,9 @@ textarea{
     width: 250px;
     overflow: hidden;
 }
+sup{
+    color: crimson;
+}
+li{
+    list-style-type: none;
+}
