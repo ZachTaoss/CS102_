@@ -19,3 +19,6 @@ sup{
 li{
     list-style-type: none;
 }
+div.Form{
+    float: left;
+}
