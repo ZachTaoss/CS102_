@@ -1,6 +1,6 @@
 let firstName = "Nothing"
-class User{
-    constructor(firstName, lastName, dateOfBirth, startPlace, endPlace,startDate,endDate){
+class UserBasicInfo{
+    constructor(firstName, lastName, dateOfBirth, startPlace, endPlace,startDate,endDate,bagNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -8,34 +8,36 @@ class User{
         this.endPlace = endPlace;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.bagNumber = bagNumber;
     }
 }
 
-class userWbags extends User{
-    constructor(bagNumber){
-    this.bagNumber = bagNumber
+class UserWithMeal extends UserBasicInfo{
+    constructor(Meal){
+        super();
+        this.Meal = Meal;
+    }
 }
+class UserWithExtra extends UserBasicInfo{
+    constructor(Extra){
+        super();
+        this.Extras = Extra;
+    }
 }
-
 function submit(){
-    userWbags.bagNumber = Math.round(document.getElementById("bags").value)
-    console.log(`This is the number of bags they want ${userWbags.bagNumber}`)
+
 }
 
 
-let boi = new User("jimmy", "Pie" , new Date("August 8, 2003"), "Arizona", "Flordia", new Date("August 26, 2020"), new Date("August 29, 2021"),10)
-
-// class boi extends User{
-//     constructor(firstName, lastName, dateOfBirth, startPlace, endPlace,startDate,endDate){
-//     this.firstName= "Jimmy";
-//     this.lastName = "Pie";
-//     this.dateOfBirth = new Date("August 11, 2003");
-//     this.startPlace = "Pheoeix";
-//     this.endPlace = "Orladgon";
-//     this.startDate = new Date("August 08, 2020");
-//     this.endDate = new Date("August 08, 2021");
-//     }
-// }
-
-console.log(`This is jimmy's info ${boi.lastName}`)
-console.log(`He's First name is ${boi.firstName}`)
+let boi = new UserBasicInfo("Jimmy", "Pie" , new Date("August 8, 2003"), "Arizona", "Flordia", new Date("August 26, 2020"), new Date("August 29, 2021"),10) 
+let boi = boi + new UserWithMeal("Pizza")
+console.log(`Last name is ${boi.lastName}`)
+console.log(`First name is ${boi.firstName}`)
+console.log(`Birth Date ${boi.dateOfBirth}`)
+console.log(`Start Place ${boi.startPlace}`)
+console.log(`Where they are going ${boi.endPlace}`)
+console.log(`The date they are leaving ${boi.startDate}`)
+console.log(`The date they are coming back ${boi.endDate}`)
+console.log(`The bags they have ${boi.bagNumber}`)
+console.log(`The meal he has chosen ${boi.Meal}`)
+console.log(`The Extra he has chosen ${boi.Extra}`)
