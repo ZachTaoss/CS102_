@@ -173,3 +173,12 @@ span{
     width: 129px;
     margin:0px 5px;
 }
+
+.printSpace{
+    margin-right: 2rem;
+}
+span{
+    border-right: soild black 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
